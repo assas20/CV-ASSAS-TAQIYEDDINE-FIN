@@ -1079,18 +1079,41 @@
             }
         }
 
-        @media print {
-            .download-btn, .bg-animation, .lang-toggle {
-                display: none !important;
-            }
-            
-            .card, .section-card {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
-        }
+       @media print {
+    /* إخفاء العناصر غير الضرورية */
+    .download-btn, 
+    .bg-animation, 
+    .lang-toggle,
+    .nav-tabs,
+    .loader,
+    .profile-ring {
+        display: none !important;
+    }
 
+    /* إظهار جميع محتويات التبويبات */
+    .tab-content {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        page-break-inside: avoid;
+    }
+
+    /* إلغاء animations */
+    .timeline-item {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    /* منع قطع المحتوى بين الصفحات */
+    .section-card, .card, .timeline-content,
+    .publication-card, .conference-card,
+    .book-card, .ai-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
         /* Hide/Show based on language */
         [data-lang] {
             display: none;
