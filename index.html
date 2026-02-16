@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assas Taqiyeddine | CV Professionnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Language Toggle Button */
+        .lang-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1001;
+            background: var(--gradient);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .lang-toggle i {
+            font-size: 1.2rem;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--gradient);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-text {
+            color: var(--white);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: #f1f5f9;
+        }
+
+        .info-icon {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Social Links Section */
+        .social-links {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .social-links-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link.google-scholar:hover {
+            background: #4285f4;
+            color: white;
+            border-color: #4285f4;
+        }
+
+        .social-link.researchgate:hover {
+            background: #00ccbb;
+            color: white;
+            border-color: #00ccbb;
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+            color: white;
+            border-color: #0077b5;
+        }
+
+        .social-link.orcid:hover {
+            background: #a6ce39;
+            color: white;
+            border-color: #a6ce39;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .social-link:hover .social-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-tag:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .timeline-content {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-subtitle {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .timeline-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .timeline-list li {
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        /* Experience PDF Links */
+        .exp-pdf-links {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exp-pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .exp-pdf-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Publications */
+        .publication-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-type {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .pub-journal {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .pub-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .pub-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .pdf-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Conferences */
+        .conference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .conference-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conference-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .conference-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .conf-date {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .conf-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .conf-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .conf-pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .conf-pdf-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Books */
+        .book-card {
+            display: flex;
+            gap: 20px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            position: relative;
+        }
+
+        .book-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+        }
+
+        .book-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .book-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .book-pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .book-pdf-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* AI Applications Section */
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .ai-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #86efac;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+        }
+
+        .ai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
+        }
+
+        .ai-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .ai-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .ai-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ai-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ai-link:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .ai-link i {
+            color: var(--secondary-color);
+        }
+
+        .ai-link:hover i {
+            color: white;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Certifications List */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #f0f9ff;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            background: #e0f2fe;
+            transform: translateX(5px);
+        }
+
+        .cert-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            margin-top: 50px;
+        }
+
+        /* Loader */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e2e8f0;
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .lang-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .download-btn {
+                bottom: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .download-btn, .bg-animation, .lang-toggle {
+                display: none !important;
+            }
+            
+            .card, .section-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* Hide/Show based on language */
+        [data-lang] {
+            display: none;
+        }
+
+        body[lang="fr"] [data-lang="fr"] {
+            display: block;
+        }
+
+        body[lang="en"] [data-lang="en"] {
+            display: block;
+        }
+
+        body[lang="fr"] [data-lang="fr"].inline,
+        body[lang="en"] [data-lang="en"].inline {
+            display: inline;
+        }
+
+        body[lang="fr"] [data-lang="fr"].flex {
+            display: flex;
+        }
+
+        body[lang="en"] [data-lang="en"].flex {
+            display: flex;
+        }
+    </style>
+</head>
+<body lang="fr">
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Language Toggle -->
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i>
+        <span data-lang="fr">English</span>
+        <span data-lang="en">Français</span>
+    </button>
+
+    <!-- Background -->
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <div class="profile-ring"></div>
+                    <img src="photo.jpg" alt="Assas Taqiyeddine" class="profile-image">
+                </div>
+                <div class="hero-text">
+                    <h1>Assas Taqiyeddine</h1>
+                    <div class="title" data-lang="fr">Docteur & Ingénieur en Travaux Publics | Enseignant Vacataire</div>
+                    <div class="title" data-lang="en">PhD & Engineer in Public Works | Lecturer</div>
+                    <p style="opacity: 0.9; margin-bottom: 20px;" data-lang="fr">
+                        Domaines de spécialité : Voies et Ouvrages d'Art | Analyse et Modélisation des Structures | Dynamique des Structures | Matériaux FGM
+                    </p>
+                    <p style="opacity: 0.9; margin-bottom: 20px;" data-lang="en">
+                        Specialties: Roads and Technical Structures | Structural Analysis and Modeling | Structural Dynamics | FGM Materials
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label" data-lang="fr">Publications Internationales</div>
+                            <div class="stat-label" data-lang="en">International Publications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">16</div>
+                            <div class="stat-label" data-lang="fr">Conférences Scientifiques</div>
+                            <div class="stat-label" data-lang="en">Scientific Conferences</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label" data-lang="fr">Années d'Expérience</div>
+                            <div class="stat-label" data-lang="en">Years of Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Contact Info -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-address-card"></i>
+                        </div>
+                        <h3 class="card-title" data-lang="fr">Coordonnées</h3>
+                        <h3 class="card-title" data-lang="en">Contact Information</h3>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope info-icon"></i>
+                        <div class="info-text">
+                            <div class="info-label" data-lang="fr">Email</div>
+                            <div class="info-label" data-lang="en">Email</div>
+                            <div class="info-value">taqiyeddine.assas@univ-biskra.dz</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone info-icon"></i>
+                        <div class="info-text">
+                            <div class="info-label" data-lang="fr">Téléphone</div>
+                            <div class="info-label" data-lang="en">Phone</div>
+                            <div class="info-value">+213 670 87 61 31 / +213 793 58 03 45</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt info-icon"></i>
+                        <div class="info-text">
+                            <div class="info-label" data-lang="fr">Adresse</div>
+                            <div class="info-label" data-lang="en">Address</div>
+                            <div class="info-value">Cité 412+80 logements LSP, Djenane Sfari, Bir Khadem, Alger, Algérie</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar info-icon"></i>
+                        <div class="info-text">
+                            <div class="info-label" data-lang="fr">Date de Naissance</div>
+                            <div class="info-label" data-lang="en">Date of Birth</div>
+                            <div class="info-value" data-lang="fr">27 Juillet 1993 (31 ans)</div>
+                            <div class="info-value" data-lang="en">July 27, 1993 (31 years)</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-flag info-icon"></i>
+                        <div class="info-text">
+                            <div class="info-label" data-lang="fr">Nationalité</div>
+                            <div class="info-label" data-lang="en">Nationality</div>
+                            <div class="info-value" data-lang="fr">Algérienne</div>
+                            <div class="info-value" data-lang="en">Algerian</div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <h4 class="social-links-title" data-lang="fr">
+                            <i class="fas fa-share-alt"></i> Profils Académiques
+                        </h4>
+                        <h4 class="social-links-title" data-lang="en">
+                            <i class="fas fa-share-alt"></i> Academic Profiles
+                        </h4>
+                        <div class="social-grid">
+                            <a href="https://scholar.google.com/scholar?hl=fr&as_sdt=0%2C5&q=assas+taqiyeddine&oq=" target="_blank" class="social-link google-scholar">
+                                <div class="social-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <span class="social-text">Google Scholar</span>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Taqiyeddine-Assas" target="_blank" class="social-link researchgate">
+                                <div class="social-icon">
+                                    <i class="fab fa-researchgate"></i>
+                                </div>
+                                <span class="social-text">ResearchGate</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/taqiyeddine-assas-770696378?originalSubdomain=dz" target="_blank" class="social-link linkedin">
+                                <div class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <span class="social-text">LinkedIn</span>
+                            </a>
+                            <a href="https://orcid.org/0009-0001-4288-2908" target="_blank" class="social-link orcid">
+                                <div class="social-icon">
+                                    <i class="fab fa-orcid"></i>
+                                </div>
+                                <span class="social-text">ORCID</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="card-title" data-lang="fr">Compétences Techniques</h3>
+                        <h3 class="card-title" data-lang="en">Technical Skills</h3>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4><i class="fas fa-laptop-code"></i> <span data-lang="fr">Logiciels de Génie Civil</span><span data-lang="en">Civil Engineering Software</span></h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AutoCAD</span>
+                            <span class="skill-tag">Civil 3D</span>
+                            <span class="skill-tag">SAP2000</span>
+                            <span class="skill-tag">Abaqus CAE</span>
+                            <span class="skill-tag">Piste/Autopiste</span>
+                            <span class="skill-tag">Covadis</span>
+                            <span class="skill-tag">Geomensura</span>
+                            <span class="skill-tag">Ginus</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4><i class="fas fa-code"></i> <span data-lang="fr">Programmation</span><span data-lang="en">Programming</span></h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">Fortran</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Scientific Workplace</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4><i class="fas fa-graduation-cap"></i> <span data-lang="fr">Spécialités</span><span data-lang="en">Specialties</span></h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-lang="fr">Voies et Ouvrages d'Art</span>
+                            <span class="skill-tag" data-lang="en">Roads and Technical Structures</span>
+                            <span class="skill-tag">MEF / FEM</span>
+                            <span class="skill-tag">FGM</span>
+                            <span class="skill-tag" data-lang="fr">Dynamique des Structures</span>
+                            <span class="skill-tag" data-lang="en">Structural Dynamics</span>
+                            <span class="skill-tag" data-lang="fr">Nanomécanique</span>
+                            <span class="skill-tag" data-lang="en">Nanomechanics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="card-title" data-lang="fr">Langues</h3>
+                        <h3 class="card-title" data-lang="en">Languages</h3>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle info-icon" style="color: #10b981;"></i>
+                        <div class="info-text">
+                            <div class="info-value" data-lang="fr">Arabe</div>
+                            <div class="info-value" data-lang="en">Arabic</div>
+                            <div class="info-label" data-lang="fr">Langue maternelle</div>
+                            <div class="info-label" data-lang="en">Native language</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle info-icon" style="color: #3b82f6;"></i>
+                        <div class="info-text">
+                            <div class="info-value" data-lang="fr">Français</div>
+                            <div class="info-value" data-lang="en">French</div>
+                            <div class="info-label">TCF B1</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle info-icon" style="color: #3b82f6;"></i>
+                        <div class="info-text">
+                            <div class="info-value" data-lang="fr">Anglais</div>
+                            <div class="info-value" data-lang="en">English</div>
+                            <div class="info-label" data-lang="fr">Niveau B2</div>
+                            <div class="info-label" data-lang="en">Level B2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="card-title" data-lang="fr">Certifications & Formations</h3>
+                        <h3 class="card-title" data-lang="en">Certifications & Training</h3>
+                    </div>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <i class="fas fa-check cert-icon"></i>
+                            <span data-lang="fr">Système de Management de la Qualité ISO 9001</span>
+                            <span data-lang="en">Quality Management System ISO 9001</span>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fas fa-check cert-icon"></i>
+                            <span data-lang="fr">Marchés Publics</span>
+                            <span data-lang="en">Public Procurement</span>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fas fa-check cert-icon"></i>
+                            <span data-lang="fr">Glissements de terrain et Stabilité des ouvrages</span>
+                            <span data-lang="en">Landslides and Stability of Structures</span>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fas fa-laptop cert-icon"></i>
+                            <span data-lang="fr">Formation Logiciel Geomensura</span>
+                            <span data-lang="en">Geomensura Software Training</span>
+                        </li>
+                    
+                        <li class="cert-item">
+                            <i class="fas fa-laptop cert-icon"></i>
+                            <span data-lang="fr">Formation Logiciel Civil 3D</span>
+                            <span data-lang="en">Civil 3D Software Training</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Navigation Tabs -->
+                <div class="nav-tabs">
+                    <button class="nav-tab active" onclick="showTab('experience')">
+                        <span data-lang="fr"><i class="fas fa-briefcase"></i> Expérience</span>
+                        <span data-lang="en"><i class="fas fa-briefcase"></i> Experience</span>
+                    </button>
+                    <button class="nav-tab" onclick="showTab('education')">
+                        <span data-lang="fr"><i class="fas fa-graduation-cap"></i> Formation</span>
+                        <span data-lang="en"><i class="fas fa-graduation-cap"></i> Education</span>
+                    </button>
+                    <button class="nav-tab" onclick="showTab('publications')">
+                        <span data-lang="fr"><i class="fas fa-book"></i> Publications</span>
+                        <span data-lang="en"><i class="fas fa-book"></i> Publications</span>
+                    </button>
+                    <button class="nav-tab" onclick="showTab('conferences')">
+                        <span data-lang="fr"><i class="fas fa-users"></i> Conférences</span>
+                        <span data-lang="en"><i class="fas fa-users"></i> Conferences</span>
+                    </button>
+                    <button class="nav-tab" onclick="showTab('books')">
+                        <span data-lang="fr"><i class="fas fa-book-open"></i> Livres</span>
+                        <span data-lang="en"><i class="fas fa-book-open"></i> Books</span>
+                    </button>
+                    <button class="nav-tab" onclick="showTab('ai-apps')">
+                        <span data-lang="fr"><i class="fas fa-robot"></i> Applications IA</span>
+                        <span data-lang="en"><i class="fas fa-robot"></i> AI Applications</span>
+                    </button>
+                </div>
+
+                <!-- Experience -->
+                <div id="experience" class="tab-content active">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Expérience Professionnelle</h2>
+                            <h2 class="section-title" data-lang="en">Professional Experience</h2>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Mars 2024 - Présent</span>
+                                    <h3 class="timeline-title">Ingénieur d'État en Travaux Publics</h3>
+                                    <div class="timeline-subtitle">Ministère des Travaux Publics - Alger</div>
+                                    <p class="timeline-desc" data-lang="fr">
+                                        Département de Développement des Infrastructures Routières (D.D.I.R), chargé du suivi de projets routiers et d'infrastructures.
+                                    </p>
+                                    <p class="timeline-desc" data-lang="en">
+                                        Department of Road Infrastructure Development (D.D.I.R), responsible for monitoring road and infrastructure projects.
+                                    </p>
+                                    <div class="exp-pdf-links">
+                                        <a href="pdfs/exp1_attestation.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Attestation
+                                        </a>
+                                        <a href="pdfs/exp1_rapport.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Rapport d'activité
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Avril 2022 - Présent</span>
+                                    <h3 class="timeline-title">Enseignant Vacataire</h3>
+                                    <div class="timeline-subtitle">ENSTP Francis Jeanson - Kouba, Alger / Université de Biskra</div>
+                                    <ul class="timeline-list" data-lang="fr">
+                                        <li>2025/2026: TD en Mécanique Rationnelle (MR)</li>
+                                        <li>2024/2025: TD en Poutre et Treillis</li>
+                                        <li>2023/2024: TD en Mécanique des Milieux Continus (MMC)</li>
+                                        <li>2022/2023: TP en Méthode des Éléments Finis (MEF)</li>
+                                        <li>Encadrement de projets de fin d'études (PFE)</li>
+                                    </ul>
+                                    <ul class="timeline-list" data-lang="en">
+                                        <li>2025/2026: Tutorials in Rational Mechanics (MR)</li>
+                                        <li>2024/2025: Tutorials in Beam and Truss</li>
+                                        <li>2023/2024: Tutorials in Continuum Mechanics (MMC)</li>
+                                        <li>2022/2023: Practical Work in Finite Element Method (FEM)</li>
+                                        <li>Supervision of final year projects (PFE)</li>
+                                    </ul>
+                                    <div class="exp-pdf-links">
+                                        <a href="pdfs/exp2_attestation.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Attestation
+                                        </a>
+                                        <a href="pdfs/exp2_programmes.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Rapport d'activité
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Décembre 2018 - Mars 2024</span>
+                                    <h3 class="timeline-title">Chargé d'Études et de Suivi des Travaux VRD</h3>
+                                    <div class="timeline-subtitle">Bureau URBA - Batna</div>
+                                    <ul class="timeline-list" data-lang="fr">
+                                        <li>Chef de projet - Projet 1600 logements AADL, Batna</li>
+                                        <li>Suivi VRD Zone industrielle Ain Yagout</li>
+                                        <li>Suivi VRD Zone industrielle Guemmar (El Oued)</li>
+                                        <li>Dédoublement RN77 (5 km)</li>
+                                    </ul>
+                                    <ul class="timeline-list" data-lang="en">
+                                        <li>Project Manager - 1600 housing units AADL, Batna</li>
+                                        <li>VRD monitoring Ain Yagout industrial zone</li>
+                                        <li>VRD monitoring Guemmar industrial zone (El Oued)</li>
+                                        <li>RN77 duplication (5 km)</li>
+                                    </ul>
+                                    <div class="exp-pdf-links">
+                                        <a href="pdfs/exp3_attestation.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Attestation
+                                        </a>
+                                        <a href="pdfs/exp3_projets.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Fiches de projets
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Novembre 2017 - Novembre 2018</span>
+                                    <h3 class="timeline-title">Chargé d'Études Principal VRD</h3>
+                                    <div class="timeline-subtitle">ANDT - Agence Nationale de Développement Touristique - Alger</div>
+                                    <ul class="timeline-list" data-lang="fr">
+                                        <li>Étude et aménagement ZET Ain Adjroud</li>
+                                        <li>Étude et aménagement ZET Bouzedjar</li>
+                                    </ul>
+                                    <ul class="timeline-list" data-lang="en">
+                                        <li>Study and development of ZET Ain Adjroud</li>
+                                        <li>Study and development of ZET Bouzedjar</li>
+                                    </ul>
+                                    <div class="exp-pdf-links">
+                                        <a href="pdfs/exp4_attestation.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Attestation
+                                        </a>
+                                        <a href="pdfs/exp4_rapports.pdf" target="_blank" class="exp-pdf-link">
+                                            <i class="fas fa-file-pdf"></i> Rapports d'études
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div id="education" class="tab-content">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Formation Académique</h2>
+                            <h2 class="section-title" data-lang="en">Academic Education</h2>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Avril 2022 - Juin 2025</span>
+                                    <h3 class="timeline-title">Doctorat LMD en Travaux Publics</h3>
+                                    <div class="timeline-subtitle">Université Mohamed Khider - Biskra</div>
+                                    <p class="timeline-desc" data-lang="fr">
+                                        <strong>Spécialité:</strong> Voies et Ouvrages d'Art<br>
+                                        <strong>Mention:</strong> Très Honorable<br>
+                                        <strong>Sujet:</strong> Analyse et modélisation du comportement des structures par la méthode des éléments finis basée sur les déformations (Strain-Based FEM) pour les matériaux à gradient fonctionnel (FGM)
+                                    </p>
+                                    <p class="timeline-desc" data-lang="en">
+                                        <strong>Specialty:</strong> Roads and Technical Structures<br>
+                                        <strong>Grade:</strong> Very Honorable<br>
+                                        <strong>Subject:</strong> Analysis and modeling of structural behavior using strain-based finite element method for functionally graded materials (FGM)
+                                    </p>
+                                    <a href="pdfs/these.pdf" target="_blank" class="pdf-link">
+                                        <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger la thèse</span><span data-lang="en">Download thesis</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Septembre 2014 - Septembre 2017</span>
+                                    <h3 class="timeline-title">Ingénieur d'État + Master 2</h3>
+                                    <div class="timeline-subtitle">ENSTP - Alger</div>
+                                    <p class="timeline-desc" data-lang="fr">
+                                        <strong>Spécialité:</strong> Infrastructures de Base<br>
+                                        <strong>Mention:</strong> Bien<br>
+                                        Formation en routes, ponts, ports et aéroports
+                                    </p>
+                                    <p class="timeline-desc" data-lang="en">
+                                        <strong>Specialty:</strong> Basic Infrastructures<br>
+                                        <strong>Grade:</strong> Good<br>
+                                        Training in roads, bridges, ports and airports
+                                    </p>
+                                    <a href="pdfs/diplome_enstp.pdf" target="_blank" class="pdf-link">
+                                        <i class="fas fa-file-pdf"></i> <span data-lang="fr">Diplôme</span><span data-lang="en">Diploma</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Septembre 2012 - Septembre 2014</span>
+                                    <h3 class="timeline-title">Classe Préparatoire</h3>
+                                    <div class="timeline-subtitle">EPST - Annaba</div>
+                                    <p class="timeline-desc" data-lang="fr">
+                                        Sciences et Techniques - Concours national d'accès aux grandes écoles
+                                    </p>
+                                    <p class="timeline-desc" data-lang="en">
+                                        Sciences and Techniques - National competition for access to engineering schools
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Juillet 2012</span>
+                                    <h3 class="timeline-title">Baccalauréat</h3>
+                                    <div class="timeline-subtitle">Lycée Mahmoud Al-Waai - Batna</div>
+                                    <p class="timeline-desc">
+                                        <span data-lang="fr"><strong>Mention:</strong> Bien</span>
+                                        <span data-lang="en"><strong>Grade:</strong> Good</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications -->
+                <div id="publications" class="tab-content">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Publications Scientifiques Internationales</h2>
+                            <h2 class="section-title" data-lang="en">International Scientific Publications</h2>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type">Q1</span>
+                            <h4 class="pub-title">Static, free vibration, and buckling analysis of functionally graded plates using the strain-based finite element formulation</h4>
+                            <div class="pub-journal">Archives of Applied Mechanics (Springer)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Juillet 2024</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 0939-1533</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1007/s00419-024-02407-0</span>
+                            </div>
+                            <a href="pdfs/publication1.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type">Q1</span>
+                            <h4 class="pub-title">Static and free vibration response of FGM plates using higher order shear deformation theory and strain-based finite element formulation</h4>
+                            <div class="pub-journal">Mechanics Based Design of Structures and Machines (Taylor & Francis)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Octobre 2024</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 1539-7734</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1080/15397734.2024.2418828</span>
+                            </div>
+                            <a href="pdfs/publication2.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type">Q1</span>
+                            <h4 class="pub-title">Static, free vibration, and buckling analysis of functionally graded plates using strain approach and Mindlin–Reissner elements</h4>
+                            <div class="pub-journal">Journal of the Brazilian Society of Mechanical Sciences and Engineering (Springer)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Août 2025</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 1678-5878</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1007/s40430-025-05126-0</span>
+                            </div>
+                            <a href="pdfs/publication3.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type">Q1</span>
+                            <h4 class="pub-title">A novel strain-based approach with high order shear deformation for enhanced static and buckling performance of functionally graded plates</h4>
+                            <div class="pub-journal">Mechanics of Advanced Materials and Structures (Taylor & Francis)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Mars 2025</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 1537-6494</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1080/15376494.2025.2473687</span>
+                            </div>
+                            <a href="pdfs/publication4.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type">Q1</span>
+                            <h4 class="pub-title">A new trigonometric shear deformation theory for static and free vibration responses of laminated composite plates using strain-based approach</h4>
+                            <div class="pub-journal">Vibration Engineering & Technologies (Springer)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Janvier 2025</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 2523-3920</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1007/s42417-024-01307-1</span>
+                            </div>
+                            <a href="pdfs/publication5.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+
+                        <div class="publication-card">
+                            <span class="pub-type" data-lang="fr">Recherche Expérimentale</span>
+                            <span class="pub-type" data-lang="en">Experimental Research</span>
+                            <h4 class="pub-title">Effect of transverse bottom slope and bed roughness on hydraulic jump flow in an asymmetrical trapezoidal stilling basin: an experimental approach</h4>
+                            <div class="pub-journal">Engineering Research Express (IOP Science)</div>
+                            <div class="pub-meta">
+                                <span><i class="fas fa-calendar"></i> Octobre 2025</span>
+                                <span><i class="fas fa-barcode"></i> ISSN: 2631-8695</span>
+                                <span><i class="fas fa-link"></i> DOI: 10.1088/2631-8695/ae1082</span>
+                            </div>
+                            <a href="pdfs/publication6.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conferences -->
+                <div id="conferences" class="tab-content">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Participations aux Conférences</h2>
+                            <h2 class="section-title" data-lang="en">Conference Participations</h2>
+                        </div>
+
+                        <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+                            <i class="fas fa-globe"></i> <span data-lang="fr">Conférences Internationales</span><span data-lang="en">International Conferences</span>
+                        </h3>
+                        
+                        <div class="conference-grid">
+                            <div class="conference-card">
+                                <span class="conf-date">Février 2023</span>
+                                <h4 class="conf-title">ICMSA2023 - Materials Sciences and Applications</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Khenchela, Algérie</div>
+                                <a href="pdfs/conference1.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Novembre 2023</span>
+                                <h4 class="conf-title">ICME'23 - Mechanical Engineering</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Constantine, Algérie</div>
+                                <a href="pdfs/conference2.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Novembre 2023</span>
+                                <h4 class="conf-title">ICEANS - Engineering and Applied Natural Sciences</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</div>
+                                <a href="pdfs/conference3.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Août 2025</span>
+                                <h4 class="conf-title">ICAENS - Applied Engineering and Natural Sciences</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</div>
+                                <a href="pdfs/conference6.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Août 2025</span>
+                                <h4 class="conf-title">6TH INTERNATIONAL CONFERENCE ON ENGINEERING, NATURAL AND SOCIAL SCIENCES</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</div>
+                                <a href="pdfs/conference999.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                            <div class="conference-card">
+                                <span class="conf-date">Septembre 2025</span>
+                                <h4 class="conf-title">2nd International Conference on Pioneer and Academic Research ICPAR 2025</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</div>
+                                <a href="pdfs/conference8888.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Septembre 2025</span>
+                                <h4 class="conf-title">7th International Conference on Innovative Academic Studies ICIAS 2025</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</div>
+                                <a href="pdfs/conference333.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Juin 2025</span>
+                                <h4 class="conf-title">2nd International Congress on Innovation Technologies & Engineering</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Izmir, Türkiye</div>
+                                <a href="pdfs/conference222.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <h3 style="color: var(--primary-color); margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+                            <i class="fas fa-flag"></i> <span data-lang="fr">Conférences Nationales</span><span data-lang="en">National Conferences</span>
+                        </h3>
+
+                        <div class="conference-grid">
+                            <div class="conference-card">
+                                <span class="conf-date">Novembre 2023</span>
+                                <h4 class="conf-title">The First National Conference of Materials Sciences And Renewable Energy</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Relizane, Algérie</div>
+                                <a href="pdfs/conference_nat1.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+
+                            <div class="conference-card">
+                                <span class="conf-date">Décembre 2023</span>
+                                <h4 class="conf-title">NCMM'2023 - National Conference on Mechanic and Material</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Boumerdès, Algérie</div>
+                                <a href="pdfs/conference_nat2.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                            <div class="conference-card">
+                                <span class="conf-date">Octobre 2023</span>
+                                <h4 class="conf-title">NCASAM/2023 - 2nd National Conference on Applied Science and Advanced Materials</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Skikda, Algérie</div>
+                                <a href="pdfs/conference_nat66.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                            <div class="conference-card">
+                                <span class="conf-date">Octobre 2025</span>
+                                <h4 class="conf-title">TP-GC-URBA/2025 - 3ème Séminaire National Architecture et Ingénierie des Villes</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Tlemcen, Algérie</div>
+                                <a href="pdfs/conference_nat4.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                            <div class="conference-card">
+                                <span class="conf-date">Octobre 2025</span>
+                                <h4 class="conf-title">NCoME'25 - National Conference on Mechanical Engineering</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Tiaret, Algérie</div>
+                                <a href="pdfs/conference_nat88.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                            <div class="conference-card">
+                                <span class="conf-date">Novembre 2025</span>
+                                <h4 class="conf-title">NCME'25 - 2nd National Conference on Mechanical Engineering</h4>
+                                <div class="conf-location"><i class="fas fa-map-marker-alt"></i> Batna, Algérie</div>
+                                <a href="pdfs/conference_nat5.pdf" target="_blank" class="conf-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger</span><span data-lang="en">Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Books -->
+                <div id="books" class="tab-content">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Publications de Livres</h2>
+                            <h2 class="section-title" data-lang="en">Book Publications</h2>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4>Modélisation des structures en matériaux composites par la méthode des éléments finis</h4>
+                                <p><strong data-lang="fr">Éditeur:</strong><strong data-lang="en">Publisher:</strong> Éditions universitaires européennes (Allemagne)</p>
+                                <p><strong data-lang="fr">Année:</strong><strong data-lang="en">Year:</strong> 2025</p>
+                                <p><strong>ISBN:</strong> 978-620-9-37019-9</p>
+                                <p style="margin-top: 10px; color: var(--text-dark);" data-lang="fr">
+                                    Ouvrage scientifique complet sur la modélisation des structures composites par la méthode des éléments finis
+                                </p>
+                                <p style="margin-top: 10px; color: var(--text-dark);" data-lang="en">
+                                    Complete scientific work on the modeling of composite structures using the finite element method
+                                </p>
+                                <a href="pdfs/book1.pdf" target="_blank" class="book-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4>TECHNIQUES INNOVANTES POUR L'ASSISE DES CHAUSSEES ROUTIERES</h4>
+                                <p><strong data-lang="fr">Éditeur:</strong><strong data-lang="en">Publisher:</strong> Dar Bassma Ilmiya (Ouargla, Algérie)</p>
+                                <p><strong data-lang="fr">Année:</strong><strong data-lang="en">Year:</strong> 2025</p>
+                                <p><strong>ISBN:</strong> 978-9969-02-899-7</p>
+                                <p style="margin-top: 10px; color: var(--text-dark);" data-lang="fr">
+                                    Techniques innovantes pour les assises des chaussées: EME et BBME
+                                </p>
+                                <p style="margin-top: 10px; color: var(--text-dark);" data-lang="en">
+                                    Innovative techniques for road bases: HMA and HMAC
+                                </p>
+                                <a href="pdfs/book2.pdf" target="_blank" class="book-pdf-link">
+                                    <i class="fas fa-file-pdf"></i> <span data-lang="fr">Télécharger PDF</span><span data-lang="en">Download PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Applications -->
+                <div id="ai-apps" class="tab-content">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h2 class="section-title" data-lang="fr">Applications IA & Plateformes Éducatives</h2>
+                            <h2 class="section-title" data-lang="en">AI Applications & Educational Platforms</h2>
+                        </div>
+
+                        <div class="ai-grid">
+                            <!-- MEF Card -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <h3 class="ai-title">MEF - Finite Element Method</h3>
+                                <div class="ai-links">
+                                    <a href="https://assas20.github.io/MEF2-ENSTP/" target="_blank" class="ai-link">
+                                        <i class="fas fa-external-link-alt"></i> Plateforme ENSTP - MEF
+                                    </a>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- MDC Card -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-hammer"></i>
+                                </div>
+                                <h3 class="ai-title" data-lang="fr">MDC - Matériaux de Construction</h3>
+                                <h3 class="ai-title" data-lang="en">MDC - Construction Materials</h3>
+                                <div class="ai-links">
+                                    <a href="https://assas20.github.io/Plateforme-ENSTP-mat-riaux-de-construction/" target="_blank" class="ai-link">
+                                        <i class="fas fa-external-link-alt"></i> Plateforme ENSTP - Matériaux
+                                    </a>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- MR Card -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3 class="ai-title" data-lang="fr">MR - Mécanique Rationnelle</h3>
+                                <h3 class="ai-title" data-lang="en">MR - Rational Mechanics</h3>
+                                <div class="ai-links">
+                                    <a href="https://assas20.github.io/Plateforme-Module-M-canique-Rationnelle/" target="_blank" class="ai-link">
+                                        <i class="fas fa-external-link-alt"></i> Plateforme ENSTP - Mécanique Rationnelle
+                                    </a>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- PFE Card -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="ai-title" data-lang="fr">PFE - Projets de Fin d'Études</h3>
+                                <h3 class="ai-title" data-lang="en">PFE - Final Year Projects</h3>
+                                <div class="ai-links">
+                                    <a href="https://assas20.github.io/Projet-PFE/" target="_blank" class="ai-link">
+                                        <i class="fas fa-external-link-alt"></i> Plateforme ENSTP - PFE
+                                    </a>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- General AI Tools -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3 class="ai-title" data-lang="fr">Outils IA Généraux</h3>
+                                <h3 class="ai-title" data-lang="en">General AI Tools</h3>
+                                <div class="ai-links">
+                                    <a href="https://chat.openai.com" target="_blank" class="ai-link">
+                                        <i class="fas fa-robot"></i> ChatGPT
+                                    </a>
+                                    <a href="https://claude.ai" target="_blank" class="ai-link">
+                                        <i class="fas fa-robot"></i> Claude AI
+                                    </a>
+                                    <a href="https://gemini.google.com" target="_blank" class="ai-link">
+                                        <i class="fas fa-robot"></i> Google Gemini
+                                    </a>
+                                    <a href="https://www.perplexity.ai" target="_blank" class="ai-link">
+                                        <i class="fas fa-search"></i> Perplexity AI
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Engineering AI -->
+                            <div class="ai-card">
+                                <div class="ai-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
+                                <h3 class="ai-title" data-lang="fr">IA pour Ingénieurs</h3>
+                                <h3 class="ai-title" data-lang="en">AI for Engineers</h3>
+                                <div class="ai-links">
+                                    <a href="https://www.autodesk.com/ai" target="_blank" class="ai-link">
+                                        <i class="fas fa-cube"></i> Autodesk AI
+                                    </a>
+                                    <a href="https://www.bentley.com/software/ai" target="_blank" class="ai-link">
+                                        <i class="fas fa-road"></i> Bentley AI
+                                    </a>
+                                    <a href="https://www.mathworks.com/products/matlab.html" target="_blank" class="ai-link">
+                                        <i class="fas fa-calculator"></i> MATLAB AI
+                                    </a>
+                                    <a href="https://www.ansys.com/ai" target="_blank" class="ai-link">
+                                        <i class="fas fa-wind"></i> Ansys AI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p data-lang="fr">© 2025 Assas Taqiyeddine - Tous droits réservés</p>
+            <p data-lang="en">© 2025 Assas Taqiyeddine - All rights reserved</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <i class="fas fa-envelope"></i> taqiyeddine.assas@univ-biskra.dz
+            </p>
+        </footer>
+    </div>
+
+    <!-- Download Button -->
+    <button class="download-btn" onclick="window.print()">
+        <i class="fas fa-download"></i>
+        <span data-lang="fr">Télécharger CV PDF</span>
+        <span data-lang="en">Download CV PDF</span>
+    </button>
+
+    <script>
+        // Language Toggle Function
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('lang');
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            
+            body.setAttribute('lang', newLang);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.body.setAttribute('lang', savedLang);
+            }
+            
+            // Hide loader
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Tab Navigation
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.closest('.nav-tab').classList.add('active');
+        }
+
+        // Scroll Animations
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card, .section-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Skill Tags Animation
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Animated Counter
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const finalValue = parseInt(stat.textContent);
+                        animateValue(stat, 0, finalValue, 2000);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) {
+            observer.observe(heroStats);
+        }
+    </script>
+</body>
+</html>
