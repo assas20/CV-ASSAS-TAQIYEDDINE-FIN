@@ -1079,7 +1079,13 @@
             }
         }
 
-       @media print {
+       /* Print Styles - All Content Visible */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm;
+    }
+
     /* إخفاء العناصر غير الضرورية */
     .download-btn, 
     .bg-animation, 
@@ -1090,13 +1096,35 @@
         display: none !important;
     }
 
+    /* إخفاء عنوان URL في رأس الصفحة */
+    @page :first {
+        margin-top: 0;
+    }
+
+    /* إخفاء معلومات الملف في الطباعة */
+    .print-header,
+    .print-footer,
+    header,
+    footer::before,
+    footer::after,
+    .url-display,
+    [class*="file://"],
+    [class*="http://"],
+    [class*="https://"] {
+        display: none !important;
+    }
+
     /* إظهار جميع محتويات التبويبات */
     .tab-content {
         display: block !important;
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
-        page-break-inside: avoid;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
     }
 
     /* إلغاء animations */
@@ -1106,12 +1134,607 @@
         animation: none !important;
     }
 
-    /* منع قطع المحتوى بين الصفحات */
-    .section-card, .card, .timeline-content,
-    .publication-card, .conference-card,
-    .book-card, .ai-card {
-        break-inside: avoid;
+    /* تنسيق عام للطباعة */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 10pt;
+        line-height: 1.25;
+        font-family: 'Poppins', 'Arial', sans-serif;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    .container {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Hero Section - صفحة كاملة */
+    .hero-section {
+        background: #1e3a8a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        border-radius: 0;
+        padding: 25px 20px;
+        margin: 0 0 15px 0 !important;
+        page-break-after: always;
         page-break-inside: avoid;
+        box-shadow: none;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    .hero-content {
+        grid-template-columns: 130px 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .profile-image-container {
+        width: 130px;
+        height: 130px;
+    }
+
+    .profile-image {
+        border: 3px solid white;
+    }
+
+    .hero-text h1 {
+        font-size: 22pt;
+        margin-bottom: 5px;
+    }
+
+    .hero-text .title {
+        font-size: 11pt;
+        margin-bottom: 8px;
+    }
+
+    .hero-text p {
+        font-size: 9pt;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    .hero-stats {
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.25) !important;
+        border: 1px solid rgba(255,255,255,0.4);
+        border-radius: 8px;
+    }
+
+    .stat-number {
+        font-size: 16pt;
+    }
+
+    .stat-label {
+        font-size: 7pt;
+    }
+
+    /* Content Grid للطباعة - كل قسم صفحة كاملة */
+    .content-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Sidebar - صفحة منفصلة */
+    .sidebar {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin: 0 0 15px 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+
+    .sidebar .card {
+        margin-bottom: 0 !important;
+        padding: 12px !important;
+        border-radius: 8px !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    .sidebar .card:first-child {
+        grid-column: span 2 !important;
+    }
+
+    .card-header {
+        margin-bottom: 8px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .card-icon {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.9rem !important;
+        border-radius: 6px !important;
+    }
+
+    .card-title {
+        font-size: 11pt !important;
+    }
+
+    .info-item {
+        padding: 4px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .info-icon {
+        font-size: 0.9rem !important;
+        margin-top: 2px !important;
+    }
+
+    .info-label {
+        font-size: 7pt !important;
+    }
+
+    .info-value {
+        font-size: 8pt !important;
+    }
+
+    .social-links {
+        margin-top: 8px !important;
+        padding-top: 8px !important;
+    }
+
+    .social-links-title {
+        font-size: 9pt !important;
+        margin-bottom: 8px !important;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 4px !important;
+    }
+
+    .social-link {
+        padding: 4px 6px !important;
+        font-size: 7pt !important;
+        border-radius: 4px !important;
+    }
+
+    .social-icon {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .skill-category {
+        margin-bottom: 8px !important;
+    }
+
+    .skill-category h4 {
+        font-size: 8pt !important;
+        margin-bottom: 4px !important;
+    }
+
+    .skill-tags {
+        gap: 3px !important;
+    }
+
+    .skill-tag {
+        padding: 2px 6px !important;
+        font-size: 7pt !important;
+        background: #e8e8e8 !important;
+        color: #333 !important;
+        border: 1px solid #bbb !important;
+        border-radius: 10px !important;
+    }
+
+    /* Main Content - كل قسم في صفحة */
+    .main-content {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Section Cards - كل قسم صفحة كاملة */
+    .section-card {
+        padding: 20px !important;
+        margin: 0 0 15px 0 !important;
+        border-radius: 0 !important;
+        border: 2px solid #1e3a8a !important;
+        box-shadow: none !important;
+        page-break-before: always !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        position: relative !important;
+    }
+
+    /* إزالة الخط الأزرق الجانبي */
+    .section-card::before {
+        display: none !important;
+    }
+
+    .section-header {
+        margin-bottom: 12px !important;
+        padding-bottom: 8px !important;
+        border-bottom: 2px solid #1e3a8a !important;
+    }
+
+    .section-icon {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1rem !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+    }
+
+    .section-title {
+        font-size: 13pt !important;
+        color: #1e3a8a !important;
+    }
+
+    /* Timeline */
+    .timeline {
+        padding-left: 15px !important;
+        position: relative !important;
+    }
+
+    .timeline::before {
+        width: 2px !important;
+        left: 0 !important;
+    }
+
+    .timeline-item {
+        padding-left: 15px !important;
+        margin-bottom: 10px !important;
+        position: relative !important;
+    }
+
+    .timeline-dot {
+        left: -20px !important;
+        width: 10px !important;
+        height: 10px !important;
+        border-width: 2px !important;
+        top: 3px !important;
+    }
+
+    .timeline-content {
+        padding: 10px !important;
+        border-left: 2px solid #3b82f6 !important;
+        border-radius: 6px !important;
+        background: #f8f9fa !important;
+    }
+
+    .timeline-date {
+        font-size: 8pt !important;
+        padding: 2px 8px !important;
+        margin-bottom: 4px !important;
+        border-radius: 10px !important;
+    }
+
+    .timeline-title {
+        font-size: 10pt !important;
+        margin-bottom: 2px !important;
+    }
+
+    .timeline-subtitle {
+        font-size: 8pt !important;
+        margin-bottom: 4px !important;
+    }
+
+    .timeline-desc {
+        font-size: 8pt !important;
+        line-height: 1.3 !important;
+    }
+
+    .timeline-list {
+        margin-top: 4px !important;
+        padding-left: 12px !important;
+    }
+
+    .timeline-list li {
+        font-size: 8pt !important;
+        margin-bottom: 2px !important;
+        line-height: 1.2 !important;
+    }
+
+    .exp-pdf-links {
+        margin-top: 6px !important;
+        gap: 4px !important;
+    }
+
+    .exp-pdf-link {
+        padding: 2px 6px !important;
+        font-size: 6pt !important;
+        background: #e0e0e0 !important;
+        color: #333 !important;
+        border: 1px solid #bbb !important;
+        border-radius: 8px !important;
+    }
+
+    /* Publications */
+    .publication-card {
+        padding: 10px !important;
+        margin-bottom: 8px !important;
+        border-left: 3px solid #3b82f6 !important;
+        border-radius: 6px !important;
+        background: #f0f4f8 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .pub-type {
+        font-size: 6pt !important;
+        padding: 1px 6px !important;
+        margin-bottom: 4px !important;
+        border-radius: 8px !important;
+    }
+
+    .pub-title {
+        font-size: 9pt !important;
+        margin-bottom: 3px !important;
+        line-height: 1.2 !important;
+    }
+
+    .pub-journal {
+        font-size: 7pt !important;
+        margin-bottom: 2px !important;
+    }
+
+    .pub-meta {
+        font-size: 6pt !important;
+        gap: 6px !important;
+    }
+
+    .pub-meta span {
+        gap: 2px !important;
+    }
+
+    .pdf-link {
+        margin-top: 4px !important;
+        padding: 2px 6px !important;
+        font-size: 6pt !important;
+        background: #e0e0e0 !important;
+        color: #333 !important;
+        border: 1px solid #bbb !important;
+        border-radius: 8px !important;
+    }
+
+    /* Conferences */
+    h3 {
+        font-size: 11pt !important;
+        margin: 12px 0 8px 0 !important;
+        padding-bottom: 4px !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+
+    .conference-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .conference-card {
+        padding: 8px !important;
+        margin-bottom: 0 !important;
+        border: 1px solid #ccc !important;
+        border-top: 3px solid #1e3a8a !important;
+        border-radius: 6px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .conf-date {
+        font-size: 6pt !important;
+        padding: 2px 6px !important;
+        margin-bottom: 4px !important;
+        border-radius: 8px !important;
+    }
+
+    .conf-title {
+        font-size: 8pt !important;
+        margin-bottom: 2px !important;
+        line-height: 1.2 !important;
+    }
+
+    .conf-location {
+        font-size: 6pt !important;
+    }
+
+    .conf-pdf-link {
+        margin-top: 4px !important;
+        padding: 2px 6px !important;
+        font-size: 6pt !important;
+        background: #e0e0e0 !important;
+        color: #333 !important;
+        border: 1px solid #bbb !important;
+        border-radius: 8px !important;
+    }
+
+    /* Books */
+    .book-card {
+        padding: 12px !important;
+        margin-bottom: 10px !important;
+        border-left: 3px solid #f59e0b !important;
+        gap: 12px !important;
+        border-radius: 6px !important;
+        background: #fffbeb !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .book-icon {
+        font-size: 1.5rem !important;
+    }
+
+    .book-info h4 {
+        font-size: 10pt !important;
+        margin-bottom: 4px !important;
+    }
+
+    .book-info p {
+        font-size: 7pt !important;
+        margin-bottom: 1px !important;
+    }
+
+    .book-pdf-link {
+        margin-top: 4px !important;
+        padding: 3px 8px !important;
+        font-size: 7pt !important;
+        background: #e0e0e0 !important;
+        color: #333 !important;
+        border: 1px solid #bbb !important;
+        border-radius: 8px !important;
+    }
+
+    /* AI Applications */
+    .ai-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .ai-card {
+        padding: 10px !important;
+        margin-bottom: 0 !important;
+        border: 1px solid #ccc !important;
+        border-top: 3px solid #22c55e !important;
+        border-radius: 6px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .ai-icon {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 1rem !important;
+        border-radius: 6px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .ai-title {
+        font-size: 8pt !important;
+        margin-bottom: 6px !important;
+    }
+
+    .ai-links {
+        gap: 3px !important;
+    }
+
+    .ai-link {
+        padding: 3px 6px !important;
+        font-size: 6pt !important;
+        border: 1px solid #ddd !important;
+        border-radius: 4px !important;
+        line-height: 1.2 !important;
+    }
+
+    .ai-link i {
+        font-size: 0.7rem !important;
+    }
+
+    /* إخفاء الروابط الكاملة وإظهار النص فقط */
+    .ai-link::after,
+    .social-link::after {
+        display: none !important;
+    }
+
+    /* Certifications */
+    .cert-list {
+        margin: 0 !important;
+    }
+
+    .cert-item {
+        padding: 4px !important;
+        margin-bottom: 4px !important;
+        font-size: 7pt !important;
+        border-radius: 4px !important;
+    }
+
+    .cert-icon {
+        font-size: 0.9rem !important;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 15px !important;
+        padding: 12px !important;
+        border-top: 2px solid #ddd !important;
+        font-size: 8pt !important;
+        text-align: center !important;
+        page-break-before: always !important;
+    }
+
+    footer p {
+        margin: 2px 0 !important;
+    }
+
+    /* إخفاء جميع العناصر التفاعلية والحركة */
+    .skill-tag, .ai-link, .social-link, .pdf-link, 
+    .exp-pdf-link, .conf-pdf-link, .book-pdf-link {
+        cursor: default !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    /* ضبط الألوان للطباعة */
+    .hero-section, .section-card, .card, .timeline-content,
+    .publication-card, .conference-card, .book-card, .ai-card,
+    .stat-item, .skill-tag, .ai-link, .social-link {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        -webkit-filter: none !important;
+        filter: none !important;
+    }
+
+    /* إخفاء أي overflow */
+    * {
+        overflow: visible !important;
+        max-height: none !important;
+        min-height: 0 !important;
+    }
+
+    /* إخفاء scrollbars */
+    ::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* ضمان عدم وجود قص للنص */
+    p, h1, h2, h3, h4, h5, h6, span, div, li, a {
+        overflow: visible !important;
+        text-overflow: clip !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+
+    /* إخفاء أي عناصر قد تسبب قص */
+    .container, .content-grid, .main-content, .sidebar,
+    .section-card, .card, .timeline, .timeline-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        max-height: none !important;
+        height: auto !important;
     }
 }
         /* Hide/Show based on language */
